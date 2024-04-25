@@ -1,5 +1,4 @@
 version: 2
-
 models:
   - name: customers
     description: 顧客ごとに1レコードを持つ
@@ -25,29 +24,3 @@ models:
       - name: number_of_orders
         description: 注文数
         data_type: INT64
-  - name: stg_customers
-    columns:
-      - name: customer_id
-        description: 顧客ID PK
-        data_type: INT64
-        tests:
-          - unique
-          - not_null
-  - name: stg_orders
-    columns:
-      - name: order_id
-        description: 注文ID PK
-        data_type: INT64
-        tests:
-          - unique
-          - not_null
-      - name: status
-        tests:
-          - accepted_values:
-              values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
-      - name: customer_id
-        tests:
-          - not_null
-          - relationships:
-              to: ref('stg_customers')
-              field: customer_id

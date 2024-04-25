@@ -39,6 +39,11 @@ Try running the following commands:
 - dbt runで生成されたドキュメントを永続化するための設定
 - https://docs.getdbt.com/reference/resource-configs/persist_docs
 
+### dbt-osmosis
+
+- pip install dbt-osmosis
+- dbt-osmosis yaml refactor
+
 
 ### Resources:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)

@@ -1,0 +1,25 @@
+version: 2
+models:
+  - name: stg_orders
+    columns:
+      - name: order_id
+        description: 注文ID PK
+        data_type: INT64
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+        data_type: INT64
+      - name: order_date
+        description: ''
+        data_type: DATE
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
+        data_type: STRING
