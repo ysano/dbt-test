@@ -6,6 +6,7 @@ target/
 dbt_modules/
 dbt_packages/
 logs/
+coverage.json
 
 ### Emacs ###
 # -*- mode: gitignore; -*-
@@ -65,7 +66,8 @@ flycheck_*.el
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
